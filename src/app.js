@@ -1,6 +1,7 @@
 import express from "express";
 import http from "http";
 import socket from "socket.io";
+import cors from "cors";
 
 import routes from "./routes";
 
@@ -25,6 +26,7 @@ class App {
 
   middlewares() {
     this.app.use(express.json());
+    this.app.use(cors());
 
     this.app.use((req, res, next) => {
       req.io = this.io;
