@@ -1,4 +1,6 @@
 import express from "express";
+import http from "http";
+import socket from "socket.io";
 
 import routes from "./routes";
 
@@ -6,18 +8,33 @@ import "./database";
 
 class App {
   constructor() {
-    this.server = express();
+    this.app = express();
+    this.server = http.Server(this.app);
+    this.io = socket(this.server);
 
     this.middlewares();
     this.routes();
+    this.instanceWebSocket();
+  }
+
+  instanceWebSocket() {
+    this.io.on("connection", client => {
+      console.log("usuario conectado", client.id);
+    });
   }
 
   middlewares() {
-    this.server.use(express.json());
+    this.app.use(express.json());
+
+    this.app.use((req, res, next) => {
+      req.io = this.io;
+
+      next();
+    });
   }
 
   routes() {
-    this.server.use(routes);
+    this.app.use(routes);
   }
 }
 
