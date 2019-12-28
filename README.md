@@ -18,6 +18,20 @@ A estrutura utilizada na aplicação se baseia no conceito MVC, e é utilizada o
 - nodemon
 - sucrase
 
+## Rodando a aplicação
+
+Para rodar o Backend instale as dependências utilizando `yarn` ou `npm` e logo após digite o comando:
+
+```
+yarn dev
+```
+
+ou caso esteja utilizando npm:
+
+```
+npm run dev
+```
+
 ## Considerações
 
 Esta é uma aplicação real time. Para testar suas funcionalidades, disponibilizei um arquivo `rotas.json` que contém todas as rotas criadas na aplicação, para utilizá-la é necessário criar
