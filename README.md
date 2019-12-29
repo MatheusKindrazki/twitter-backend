@@ -53,5 +53,5 @@ Após, abra o console e teste alguma para que o console dispare alguma informaç
 
 Este backend faz parte de um de um estudo e é utilizado nas seguintes aplicações:
 
-- [Twitter Web | React.js](#!)
+- [Twitter Web | React.js](https://github.com/MatheusKindrazki/twitter-frontend)
 - [Twitter Mobile | React Native](#!)
