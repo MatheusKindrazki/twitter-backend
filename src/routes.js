@@ -14,5 +14,6 @@ routes.get("/tweets", TweetController.index);
 routes.post("/tweets", TweetController.store);
 
 routes.post("/likes/:id", LikeController.store);
+routes.post("/likes/:id/undo", LikeController.update);
 
 export default routes;
